@@ -1,168 +1,290 @@
-*{
+/* Variáveis para facilitar a manutenção */
+:root {
+    --primary-color: #46a14d;
+    --accent-color: #ff4500;
+    --bg-dark: #1a0f0f;
+    --text-light: #f4e1d2;
+    --text-muted: #a57272;
+    --glass-bg: rgba(26, 48, 0, 0.85);
+}
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
     scroll-behavior: smooth;
 }
 
-a{
-    text-decoration: none;
-    color: inherit;
-    opacity: 0.7;
-    font-size: 18px;
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
 }
-nav{
+
+
+nav {
     position: fixed;
     width: 100%;
     height: 80px;
-     background-image: url('./Images/dungeons\ n\ dragons\ movie\ poster.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./Images/dungeons\ n\ dragons\ movie\ poster.jpg');
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    z-index: 999;
-    background-color: rgb(26, 48, 0);
-    box-shadow: 0px 3px 10px #09090970;
+    z-index: 100;
+    backdrop-filter: blur(5px); 
+    border-bottom: 2px solid var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; 
+    gap: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
 }
-#D{
-   height: 100vh;
-    padding-top: 80px;
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+    text-shadow: 0 0 8px var(--primary-color);
+}
+
+
+#D {
+    min-height: 100vh;
+    padding: 50px 20px 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px; 
+    gap: 40px; 
 }
-.fuga{
+
+
+.fuga {
     width: 400px;
     height: 400px;
+    max-width: 90vw;
+    max-height: 90vw;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border: 2px solid black;
-    border-radius: 999px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.494);
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px rgba(70, 161, 77, 0.4);
+    transition: transform 0.4s ease;
 }
 
-.fuga img{
+.fuga:hover {
+    transform: rotate(3deg) scale(00.3s);
+}
+
+.fuga img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.fuga:hover img {
+    transform: scale(1.25);
+}
+
+
+#C {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./Images/dungeons\ n\ dragons\ movie\ poster.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.lola{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 150px;
+}
+
+
+
+.wrapImages{
+     height: auto;
     width: 400px;
+    border: 2px solid #2e8b09;
+    border-radius: 20px;
+    color: rgb(253, 253, 253);
+    transition: all 200ms ease-in-out;
+    background-color: rgb(43, 27, 27);
+}
+
+.wrapImages img{
+    width: 100%;
     height: auto;
     transition: all 200ms ease-in-out;
-}
-
-.fuga img:hover{
-    transform: scale(1.1);
-}
-
-.roxo{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 
 }
-#C{
-     width: 100%;
+
+.wrapImages p{
+     padding: 5px;
+    background-color: #200d14;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.wrapImages:hover {
+    flex-direction: column;
+    transform: translateY(-10px);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.6);
+    border-color: var(--text-light);
+}
+
+
+#s2 {
     min-height: 100vh;
     height: auto;
-    background-image: url('./Images/dungeons\ n\ dragons\ movie\ poster.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    padding: 50px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.roxo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
-    padding: 50px;
+    gap: 150px;
 }
-#Q{
-     width: 100%;
-    min-height: 100vh;
+
+.lolo {
     height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding: 50px;
-}
-.lolo{
-    width: 300px;
-    border: 2px solid #46a14d;
-    background-color: #331e1e;
-    color: #a57272;
+    width: 400px;
+    border: 2px solid #090909;
+    border-radius: 20px;
+    color: rgb(10, 10, 10);
+    transition: all 200ms ease-in-out;
+    background-color: rgb(22, 127, 247);
 }
 
-.wrapTexts{
-    padding: 20px;
-}
-
-.lolo img{
+.lolo img {
+    height: auto;
     width: 100%;
-    height: auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
-.C2{
-    min-height: 80vh;
-    height: auto;
+
+.lolo:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+
+
+.C2 {
+    padding: 200px 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 200px;
+    gap: 50px;
+    background: var(--bg-dark);
 }
 
-.formulario{
-    width: 300px;
-    height: auto;
-    padding: 20px;
+.formulario {
+    width: 100%;
+    max-width: 400px;
+    background: #251515;
+    padding: 30px;
+    border: 1px solid var(--primary-color);
+    border-radius: 15px;
+    box-shadow: 5px 5px 0px var(--primary-color);
+}
+
+.formulario label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.formulario input, 
+.formulario textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: #1a0f0f;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.formulario input:focus, 
+.formulario textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+.formulario button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.formulario button:hover {
+    background-color: #388e3c;
+    letter-spacing: 2px;
+}
+
+footer{
+        width: 100%;
+    height: 50px;
+    box-shadow: 0px 3px 10px black;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    border: 2px solid black;
-    border-radius: 10px;
+    gap: 30px;
 }
 
-.formulario label{
-    width: 100%;
-    padding: 10px;
-    margin-bottom: -25px;
-}
 
-.formulario input{
-    width: 100%;
-    padding: 10px;
-}
-
-.formulario textarea{
-    max-width: 100%;
-    width:255px;
-    min-width: 255px;
-    padding: 10px;
-}
-
-.formulario button{
-    width: 100%;
-    padding: 10px;
-}
-
-@media (width <= 1000px){
-    #C{
-        padding-top: 100px;
+@media (max-width: 768px) {
+    nav {
+        gap: 15px;
     }
-    #D{
-        margin-top: 100px;
+    
+    nav a {
+        font-size: 14px;
+    }
+
+    .fuga {
+        width: 280px;
+        height: 280px;
     }
 }
